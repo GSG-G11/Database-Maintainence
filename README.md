@@ -1,58 +1,63 @@
-
 # Database setup and maintenance
-  - What is a build script and why do you need one? (think ahead to how this might come in useful when working on a project this week)
-  - What is database migration?
-  - Create a build script for a simple database (one or two tables only), which you can run locally. Check that it works for you and everyone on your team
 
-## Bulid script
+- What is a build script and why do you need one?
+- What is database migration?
+- Create a build script for a simple database.
 
-## What is  bulid script?
+# Bulid script
+
+## What is bulid script?
+
 - A build script is a file that is started by a build plan. The build script prepares output from generated files.
 
-## what is bluid plan ?
-- The build plan is an XML file that makes the following details available at preparation time:
-     -The files that need to be processed on the build system
-     -The build scripts that are needed to process them
-     -The location where the output will be placed
+## what is build plan ?
 
-## What is UIZE?
-
-- UIZE provides a system for developing build scripts that can be run either with NodeJS 
+- The build plan is a file that makes the following details available at preparation time:
+  - The files that need to be processed on the build system
+  - The build scripts that are needed to process them
+  - The location where the output will be placed
 
 ## What the Build Scripts Do?
--UIZE comes with a versatile and extensible build system that is integrated into the dev server, allowing files to be built as part of a deploy process but also dynamically as needed during development.
 
-   -compress JavaScript modules into smaller, obfuscated files using the UIZE's Scruncher
-   -compile CSS modules from .csst (CSS template) files that can use variables and functions
-   -compile JST (JavaScript template) modules from .js.jst files in the module folder
-   -build packages that include JavaScript modules, CSS modules, and HTML template modules
-   -copy unprocessed static files (such as image assets) from a project's source path to a corresponding location under the project's built path
+Build scripts allow files to be built as part of a deploy process but also dynamically as needed during development.
 
+Build scripts can do alot of things, for example:
 
-## Types of Build Scripts::
-- Build Scripts for Building Files 
+- compress JavaScript modules into smaller, obfuscated files.
+- compile CSS modules from .csst (CSS template) files that can use variables and functions
+- compile JST (JavaScript template) modules from .js.jst files in the module folder
+- build packages that include JavaScript modules, CSS modules, and HTML template modules
+- copy unprocessed static files (such as image assets) from a project's source path to a corresponding location under the project's built path
+- Create data in database to set you started.
+
+Our use will be for creating data in the database
+
+## Types of Build Scripts:
+
+- Build Scripts for Building Files
 - Development Tool Build Scripts
 
-## Where the Build Scripts are Located?
-- all of UIZE's built-in build scripts are located under the Uize.Build namespace.
-
 ## Running the Build Scripts:
+
 To run the build scripts in NodeJS, perform the following steps...
 
 1. Open a bash (or equivalent) window.
 2. Set your project's root folder as the working directory (cd as necessary).
 3. Enter a command to execute, of the form...
+
 ```
-node [path_to_uize]build.js [build_module_name] [optional_build_params]
-```
-```
-node ../UIZE-JavaScript-Framework/build.js Uize.Build.All test=false
+node [path_to_file]/[build_module_name]
 ```
 
-## Database Migration
+```
+node ../build/build.js
+```
+
+# Database Migration
 
 ### What is migration?
--  Conversion of an existing application environment into a new architecture by preserving data and functionality of the old architecture.
+
+- Conversion of an existing application environment into a new architecture by preserving data and functionality of the old architecture.
 
 ### What is database migration?
 
@@ -74,11 +79,10 @@ The common reasons for using database migration are:
 - The benefit of database migration is that it helps move data from an outdated legacy system to a modernized software.
 - Database migration helps unify disparate data, so it is accessible by different techniques.
 
-
 ### What IS Database Migration Challenges?
+
 - Data Loss: The most common issue firms face data loss during the DB migration. During the planning stage, testing for data loss or data corruption is crucial to verify whether complete data was migrated during the migration process or not.
 - Data Security: Data is a business’s most valuable asset. Therefore, its security is of utmost importance. Before the DB migration process occurs, data encryption should be a top priority.
-
 
 # **Create a Build Script**
 
